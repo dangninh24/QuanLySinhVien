@@ -11,7 +11,7 @@
     <RelativeLayout
         android:id="@+id/rltl_background"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true">
 
         <ImageView
@@ -26,7 +26,7 @@
         android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="130dp"
         app:cardCornerRadius="30dp"
         app:cardElevation="23dp">
 
@@ -76,7 +76,7 @@
                     android:background="@drawable/custom_top_radius_profile"
                     android:gravity="center"
                     android:text="Thông tin cá nhân"
-                    android:textColor="#795548"
+                    android:textColor="@color/white"
                     android:textSize="16dp"
                     android:textStyle="bold" />
 
@@ -204,7 +204,7 @@
                     android:background="@drawable/custom_top_radius_profile"
                     android:gravity="center"
                     android:text="Thông tin liên hệ"
-                    android:textColor="#795548"
+                    android:textColor="@color/white"
                     android:textSize="16dp"
                     android:textStyle="bold" />
 
@@ -265,7 +265,7 @@
                 android:background="@drawable/custom_top_radius_profile"
                 android:gravity="center"
                 android:text="Thông tin liên quan"
-                android:textColor="#795548"
+                android:textColor="@color/white"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 

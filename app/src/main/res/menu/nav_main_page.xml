@@ -5,10 +5,10 @@
         android:id="@+id/home"
         app:showAsAction="ifRoom"
         android:icon="@drawable/home_icon"
-        android:title="Home" />
+        android:title="Trang chủ" />
     <item
         android:id="@+id/profile"
         app:showAsAction="ifRoom"
         android:icon="@drawable/profile_icon"
-        android:title="Profile" />
+        android:title="Thông tin cá nhân" />
 </menu>
