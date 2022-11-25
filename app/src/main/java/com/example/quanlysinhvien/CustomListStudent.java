@@ -40,7 +40,6 @@ public class CustomListStudent extends RecyclerView.Adapter<CustomListStudent.Vi
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         Student student = list.get(position);
-        Log.d("Data", student.getId() + student.getName());
         holder.img_student.setImageResource(student.getImg());
         holder.txt_class_name_student.setText(student.getClass_name());
         holder.txt_student_id.setText(student.getId());
