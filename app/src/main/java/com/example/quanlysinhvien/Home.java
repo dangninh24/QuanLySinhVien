@@ -1,5 +1,6 @@
 package com.example.quanlysinhvien;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -88,22 +89,25 @@ public class Home extends Fragment {
             @Override
             public void doSomeThing(int position) {
                 classRoom = list.get(position);
-
             }
         });
         list_class.setAdapter(customListClass);
         list_class.setLayoutManager(new LinearLayoutManager(getContext()));
 
         btn_watch.setOnClickListener(view -> {
-            try{
-                Toast.makeText(getContext(), classRoom.getTeacher_name(), Toast.LENGTH_SHORT).show();
-                classRoom = null;
-            } catch (Exception err) {
-                Toast.makeText(getContext(), "Bạn chưa chọn lớp", Toast.LENGTH_SHORT).show();
-
-            }
-
+            StartClass();
         });
 
+    }
+
+    private void StartClass() {
+        try{
+            Toast.makeText(getContext(), classRoom.getTeacher_name(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getContext(), ActivityStudent.class);
+            startActivity(intent);
+            classRoom = null;
+        } catch (Exception err) {
+            Toast.makeText(getContext(), "Bạn chưa chọn lớp", Toast.LENGTH_SHORT).show();
+        }
     }
 }

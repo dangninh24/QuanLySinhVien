@@ -13,6 +13,13 @@
         android:theme="@style/Theme.QuanLySinhVien"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityStudent"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ListStudent"
             android:exported="false">
             <meta-data

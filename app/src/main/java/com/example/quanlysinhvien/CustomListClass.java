@@ -39,6 +39,7 @@ public class CustomListClass extends RecyclerView.Adapter<CustomListClass.Viewho
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         ClassRoom classRoom =  list.get(position);
+
         holder.img_teacher.setImageResource(classRoom.getImg());
         holder.class_id.setText(classRoom.getClass_id());
         holder.class_name.setText(classRoom.getClass_name());
