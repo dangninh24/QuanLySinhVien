@@ -14,7 +14,7 @@ import java.util.List;
 public class ActivityStudent extends AppCompatActivity {
     RecyclerView list_student;
     Student student;
-    Button btn_watch;
+    Button btn_watch, btn_back;
     List<Student> list;
 
     @Override
@@ -34,6 +34,7 @@ public class ActivityStudent extends AppCompatActivity {
 
         list_student = findViewById(R.id.list_student);
         btn_watch = findViewById(R.id.btn_watch);
+        btn_back = findViewById(R.id.btn_back);
 
         CustomListStudent customListStudent = new CustomListStudent(list);
         customListStudent.setOnClickItemListener(new CustomListStudent.OnClickItemListener() {
@@ -50,6 +51,14 @@ public class ActivityStudent extends AppCompatActivity {
         btn_watch.setOnClickListener(view -> {
             StartStudent();
         });
+
+        btn_back.setOnClickListener(view -> {
+            BackActivity();
+        });
+    }
+
+    private void BackActivity() {
+        finish();
     }
 
     private void StartStudent() {
