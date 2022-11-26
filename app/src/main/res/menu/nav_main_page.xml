@@ -7,6 +7,11 @@
         android:icon="@drawable/home_icon"
         android:title="Trang chủ" />
     <item
+        android:id="@+id/adviser"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/adviser"
+        android:title="Cố vấn" />
+    <item
         android:id="@+id/profile"
         app:showAsAction="ifRoom"
         android:icon="@drawable/profile_icon"

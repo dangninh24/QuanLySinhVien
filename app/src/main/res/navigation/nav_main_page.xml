@@ -13,10 +13,35 @@
         <action
             android:id="@+id/action_home_to_profile"
             app:destination="@id/profile" />
+        <action
+            android:id="@+id/action_home_to_adviser"
+            app:destination="@id/adviser" />
     </fragment>
     <fragment
         android:id="@+id/profile"
         android:name="com.example.quanlysinhvien.Profile"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_profile_to_adviser"
+            app:destination="@id/adviser" />
+        <action
+            android:id="@+id/action_profile_to_adviser2"
+            app:destination="@id/adviser" />
+    </fragment>
+    <fragment
+        android:id="@+id/adviser"
+        android:name="com.example.quanlysinhvien.Adviser"
+        android:label="fragment_adviser"
+        tools:layout="@layout/fragment_adviser" >
+        <action
+            android:id="@+id/action_adviser_to_home"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_adviser_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
 </navigation>
