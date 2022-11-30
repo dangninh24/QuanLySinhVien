@@ -71,6 +71,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_student_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -93,6 +94,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_student_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -115,6 +117,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_sex"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -137,6 +140,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_dob"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -158,6 +162,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_cccd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -179,6 +184,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_address"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -201,6 +207,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_department"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -240,6 +247,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -263,6 +271,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_phone_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"

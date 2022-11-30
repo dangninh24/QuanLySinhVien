@@ -55,11 +55,14 @@ public class ActivityStudent extends AppCompatActivity {
     }
 
     private void StartStudent() {
-        try{
+        if(student != null) {
             Intent intent = new Intent(this, ActivityProfileStudent.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("MaSinhVien", student.getMaSinhVien());
+            intent.putExtras(bundle);
             startActivity(intent);
             student = null;
-        } catch (Exception err) {
+        } else {
             Toast.makeText(this, "Bạn chưa chọn sinh viên", Toast.LENGTH_SHORT).show();
         }
     }

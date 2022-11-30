@@ -18,4 +18,8 @@ public interface StudentDao {
 
     @Query("SELECT * FROM Student WHERE MaLop = :classId")
     List<Student> getListStudentByClass(String classId);
+
+    @Query("SELECT * FROM Student WHERE MaSinhVien = :id")
+    Student getStudentById(String id);
+    
 }

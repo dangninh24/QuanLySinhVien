@@ -34,9 +34,9 @@
     </fragment>
     <fragment
         android:id="@+id/adviser"
-        android:name="com.example.quanlysinhvien.Adviser"
+        android:name="com.example.quanlysinhvien.Advisers"
         android:label="fragment_adviser"
-        tools:layout="@layout/fragment_adviser" >
+        tools:layout="@layout/fragment_advisers" >
         <action
             android:id="@+id/action_adviser_to_home"
             app:destination="@id/home" />

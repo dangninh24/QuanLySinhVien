@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import datalocal.entity.Subject;
+
 public class CustomListSubject extends RecyclerView.Adapter<CustomListSubject.ViewHolder> {
     public interface OnClickItemListener{
         void doSomeThing(int position);
@@ -37,9 +39,9 @@ public class CustomListSubject extends RecyclerView.Adapter<CustomListSubject.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Subject subject = list.get(position);
-        holder.txt_subject_id.setText(subject.getId());
-        holder.txt_subject_name.setText(subject.getName());
-        holder.txt_subject_price.setText(String.valueOf(subject.getPrice()));
+        holder.txt_subject_id.setText(subject.getMaMon());
+        holder.txt_subject_name.setText(subject.getTenMon());
+        holder.txt_subject_price.setText(String.valueOf(subject.getHocPhi()));
         holder.cardview_subject.setOnClickListener(view -> {
             onClickItemListener.doSomeThing(position);
         });

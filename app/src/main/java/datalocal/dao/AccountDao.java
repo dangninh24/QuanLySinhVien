@@ -7,7 +7,6 @@ import androidx.room.Query;
 import java.util.List;
 
 import datalocal.entity.Account;
-import datalocal.entity.AccountAndTeacher;
 
 @Dao
 public interface AccountDao {
@@ -20,6 +19,4 @@ public interface AccountDao {
     @Query("SELECT * FROM Account WHERE TaiKhoan = :acc AND MatKhau = :pass")
     Account getListAccountByAccAndPass(String acc, String pass);
 
-    @Query("SELECT * FROM Account WHERE TaiKhoan = :acc")
-    AccountAndTeacher getAccountAndTeacherByAcc(String acc);
 }

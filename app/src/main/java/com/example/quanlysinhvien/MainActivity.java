@@ -14,9 +14,10 @@ import com.example.quanlysinhvien.databinding.ActivityMainBinding;
 
 import datalocal.dbconnect.DBConnect;
 import datalocal.entity.Account;
-import datalocal.entity.AccountAndTeacher;
+import datalocal.entity.Adviser;
 import datalocal.entity.ClassRoom;
 import datalocal.entity.Student;
+import datalocal.entity.Subject;
 import datalocal.entity.Teacher;
 
 
@@ -83,6 +84,35 @@ public class MainActivity extends AppCompatActivity {
 //        dbConnect.getStudentDao().insertStudent(student4);
 //        dbConnect.getStudentDao().insertStudent(student5);
 //        dbConnect.getStudentDao().insertStudent(student6);
+//
+//        Subject subject1 = new Subject("20001", "CSS", 30000, "SV01");
+//        Subject subject2 = new Subject("20002", "C++", 30000, "SV01");
+//        Subject subject3 = new Subject("20003", "C#", 30000, "SV01");
+//        Subject subject4 = new Subject("20004", "JAVA", 30000, "SV01");
+//        Subject subject5 = new Subject("20005", "PHP", 30000, "SV01");
+//
+//        dbConnect.getSubjectDao().insertSubject(subject1);
+//        dbConnect.getSubjectDao().insertSubject(subject2);
+//        dbConnect.getSubjectDao().insertSubject(subject3);
+//        dbConnect.getSubjectDao().insertSubject(subject4);
+//        dbConnect.getSubjectDao().insertSubject(subject5);
+
+//        Adviser adviser1 = new Adviser("CV01", "A", "", "SV01");
+//        Adviser adviser2 = new Adviser("CV02", "A", "", "SV01");
+//        Adviser adviser3 = new Adviser("CV03", "A", "", "SV02");
+//        Adviser adviser4 = new Adviser("CV04", "A", "", "SV04");
+//        Adviser adviser5 = new Adviser("CV05", "A", "", "SV03");
+//        Adviser adviser6 = new Adviser("CV06", "A", "", "SV02");
+//        Adviser adviser7 = new Adviser("CV07", "A", "", "SV05");
+//
+//        dbConnect.getAdviserDao().insertAdviser(adviser1);
+//        dbConnect.getAdviserDao().insertAdviser(adviser2);
+//        dbConnect.getAdviserDao().insertAdviser(adviser3);
+//        dbConnect.getAdviserDao().insertAdviser(adviser4);
+//        dbConnect.getAdviserDao().insertAdviser(adviser5);
+//        dbConnect.getAdviserDao().insertAdviser(adviser6);
+//        dbConnect.getAdviserDao().insertAdviser(adviser7);
+
         try{
             String pass =  binding.etxtPass.getText().toString();
             String acc =  binding.etxtAcc.getText().toString();
@@ -93,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, MainPage.class);
                 Home home = Home.newInstance(account);
                 Profile profile = Profile.newInstance(account);
+                Advisers advisers = Advisers.newInstance(account.getTaiKhoan());
                 startActivity(intent);
             } else {
                 Toast.makeText(this, "Tài Khoản Hoặc Mật Khẩu Không Đúng.", Toast.LENGTH_SHORT).show();
