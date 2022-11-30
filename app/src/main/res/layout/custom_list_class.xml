@@ -27,11 +27,11 @@
                 android:layout_height="80dp">
                 <ImageView
                     android:id="@+id/img_class_home"
-                    android:src="@drawable/thaongan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </androidx.cardview.widget.CardView>
             <LinearLayout
+                android:layout_margin="10dp"
                 android:orientation="vertical"
                 android:layout_toRightOf="@id/card_img"
                 android:layout_alignParentTop="true"
@@ -51,7 +51,6 @@
                         android:id="@+id/class_id"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:text="sd"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"/>
                 </LinearLayout>
@@ -71,23 +70,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"/>
                 </LinearLayout>
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_margin="5dp"
-                        android:text="Giáo viên phụ trách:"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"/>
-                    <TextView
-                        android:id="@+id/teacher_name"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"/>
-                </LinearLayout>
-
             </LinearLayout>
         </RelativeLayout>
 </androidx.cardview.widget.CardView>

@@ -15,6 +15,8 @@ import com.example.quanlysinhvien.databinding.ActivityMainBinding;
 import datalocal.dbconnect.DBConnect;
 import datalocal.entity.Account;
 import datalocal.entity.AccountAndTeacher;
+import datalocal.entity.ClassRoom;
+import datalocal.entity.Student;
 import datalocal.entity.Teacher;
 
 
@@ -65,7 +67,22 @@ public class MainActivity extends AppCompatActivity {
 //                "1234567890",
 //                "Thạc Sĩ", "Quản Lý Khoa Học", "thaoNgan06082001@gmail.com");
 //        dbConnect.getTeacherDao().insertTeacher(teacher);
-
+//        ClassRoom classRoom1 = new ClassRoom("L01", "Lớp HTTT", "GV1", R.drawable.thaongan);
+//        ClassRoom classRoom2 = new ClassRoom("L02", "Lớp CNTT", "GV1", R.drawable.thaongan);
+//        dbConnect.getClassRoomDao().insertClassRoom(classRoom1);
+//        dbConnect.getClassRoomDao().insertClassRoom(classRoom2);
+//        Student student1 = new Student("SV01", "Đặng Đình Ninh", R.drawable.thaongan, "L01", "24/05/2001", "Nam", "Hà Nội", "1234567890", "0367052757", "dangninh24052001@gmail.com", "HTTT");
+//        Student student2 = new Student("SV02", "Đặng Đình Ninh", R.drawable.thaongan, "L01", "24/05/2001", "Nam", "Hà Nội", "1234567890", "0367052757", "dangninh24052001@gmail.com", "HTTT");
+//        Student student3 = new Student("SV03", "Đặng Đình Ninh", R.drawable.thaongan, "L01", "24/05/2001", "Nam", "Hà Nội", "1234567890", "0367052757", "dangninh24052001@gmail.com", "HTTT");
+//        Student student4 = new Student("SV04", "Đặng Đình Ninh", R.drawable.thaongan, "L01", "24/05/2001", "Nam", "Hà Nội", "1234567890", "0367052757", "dangninh24052001@gmail.com", "HTTT");
+//        Student student5 = new Student("SV05", "Đặng Đình Ninh", R.drawable.thaongan, "L01", "24/05/2001", "Nam", "Hà Nội", "1234567890", "0367052757", "dangninh24052001@gmail.com", "HTTT");
+//        Student student6 = new Student("SV06", "Đặng Đình Ninh", R.drawable.thaongan, "L01", "24/05/2001", "Nam", "Hà Nội", "1234567890", "0367052757", "dangninh24052001@gmail.com", "HTTT");
+//        dbConnect.getStudentDao().insertStudent(student1);
+//        dbConnect.getStudentDao().insertStudent(student2);
+//        dbConnect.getStudentDao().insertStudent(student3);
+//        dbConnect.getStudentDao().insertStudent(student4);
+//        dbConnect.getStudentDao().insertStudent(student5);
+//        dbConnect.getStudentDao().insertStudent(student6);
         try{
             String pass =  binding.etxtPass.getText().toString();
             String acc =  binding.etxtAcc.getText().toString();
@@ -82,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } catch (Exception err) {
-            Toast.makeText(this, "Lỗi Truy Cập Dữ Liệu.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Lỗi Truy Cập Dữ Liệu." + err.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -1,18 +1,19 @@
 package com.example.quanlysinhvien;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import datalocal.entity.ClassRoom;
+import datalocal.entity.Student;
 
 public class CustomListStudent extends RecyclerView.Adapter<CustomListStudent.Viewholder> {
     public interface OnClickItemListener{
@@ -21,9 +22,11 @@ public class CustomListStudent extends RecyclerView.Adapter<CustomListStudent.Vi
 
     private OnClickItemListener onClickItemListener;
     List<Student> list;
+    ClassRoom classRoom;
 
-    public CustomListStudent(List<Student> _list) {
+    public CustomListStudent(List<Student> _list, ClassRoom classRoom) {
         this.list = _list;
+        this.classRoom = classRoom;
     }
 
     public void setOnClickItemListener(OnClickItemListener onClickItemListener) {
@@ -40,10 +43,10 @@ public class CustomListStudent extends RecyclerView.Adapter<CustomListStudent.Vi
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         Student student = list.get(position);
-        holder.img_student.setImageResource(student.getImg());
-        holder.txt_class_name_student.setText(student.getClass_name());
-        holder.txt_student_id.setText(student.getId());
-        holder.txt_student_name.setText(student.getName());
+        holder.img_student.setImageResource(student.getAnhSinhVien());
+        holder.txt_class_name_student.setText(classRoom.getTenLop());
+        holder.txt_student_id.setText(student.getMaSinhVien());
+        holder.txt_student_name.setText(student.getTenSinhVien());
         holder.cardview_student.setOnClickListener(view -> {
             onClickItemListener.doSomeThing(position);
         });

@@ -4,24 +4,23 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.quanlysinhvien.databinding.FragmentHomeBinding;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import datalocal.entity.Account;
-import datalocal.entity.AccountAndTeacher;
+import datalocal.entity.ClassRoom;
+import datalocal.entity.Student;
 import datalocal.entity.Teacher;
 
 /**
@@ -80,17 +79,16 @@ public class Home extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Teacher teacher = MainActivity.dbConnect.getTeacherDao().getTeacherByAccount(account.getTaiKhoan());
-        binding.txtName.setText(teacher.getTenGiaoVien());
-        if(teacher.getAnhGiaoVien() == R.drawable.thaongan) {
-            binding.imgTeacherHome.setImageResource(R.drawable.thaongan);
-            binding.imgTeacher.setImageResource(R.drawable.thaongan);
+        if(teacher != null) {
+            binding.txtName.setText(teacher.getTenGiaoVien());
+            if(teacher.getAnhGiaoVien() == R.drawable.thaongan) {
+                binding.imgTeacherHome.setImageResource(R.drawable.thaongan);
+                binding.imgTeacher.setImageResource(R.drawable.thaongan);
+            }
         }
 
-
-        List<ClassRoom> list = new ArrayList<>();
-        list.add(new ClassRoom(R.drawable.thaongan, "1", "Lớp 1", "Dương Thảo Ngân"));
-        list.add(new ClassRoom(R.drawable.thaongan, "2", "Lớp 2", "Lươn Thảo Ngân"));
-
+        List<ClassRoom> list;
+        list = MainActivity.dbConnect.getClassRoomDao().getListClassRoom(account.getTaiKhoan());
         CustomListClass customListClass = new CustomListClass(list);
         customListClass.setMyOnClickItemListener(new CustomListClass.MyOnClickItemListener() {
             @Override
@@ -108,12 +106,14 @@ public class Home extends Fragment {
     }
 
     private void StartClass() {
-        try{
-            Toast.makeText(getContext(), classRoom.getTeacher_name(), Toast.LENGTH_SHORT).show();
+        if(classRoom != null){
             Intent intent = new Intent(getContext(), ActivityStudent.class);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("ClassRoom",  classRoom);
+            intent.putExtras(bundle);
             startActivity(intent);
             classRoom = null;
-        } catch (Exception err) {
+        } else {
             Toast.makeText(getContext(), "Bạn chưa chọn lớp", Toast.LENGTH_SHORT).show();
         }
     }

@@ -2,60 +2,50 @@ package com.example.quanlysinhvien;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.example.quanlysinhvien.databinding.ActivityStudentBinding;
+
 import java.util.List;
 
+import datalocal.entity.ClassRoom;
+import datalocal.entity.Student;
+
 public class ActivityStudent extends AppCompatActivity {
-    RecyclerView list_student;
+    ActivityStudentBinding binding;
     Student student;
-    Button btn_watch, btn_back;
     List<Student> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student);
+        binding = ActivityStudentBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        list_student = findViewById(R.id.list_student);
-        btn_watch = findViewById(R.id.btn_watch);
-        btn_back = findViewById(R.id.btn_back_student);
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        ClassRoom classRoom = (ClassRoom) bundle.getSerializable("ClassRoom");
+        list = MainActivity.dbConnect.getStudentDao().getListStudentByClass(classRoom.getMaLop());
 
-        list = new ArrayList<>();
-        list.add(new Student("Ninh1", "1", "Lớp 1", R.drawable.thaongan));
-        list.add(new Student("Ninh2", "2", "Lớp 1", R.drawable.thaongan));
-        list.add(new Student("Ninh3", "3", "Lớp 2", R.drawable.thaongan));
-        list.add(new Student("Ninh4", "4", "Lớp 1", R.drawable.thaongan));
-        list.add(new Student("Ninh5", "5", "Lớp 2", R.drawable.thaongan));
-        list.add(new Student("Ninh6", "6", "Lớp 1", R.drawable.thaongan));
-        list.add(new Student("Ninh7", "7", "Lớp 2", R.drawable.thaongan));
-        list.add(new Student("Ninh8", "8", "Lớp 1", R.drawable.thaongan));
-
-
-
-        CustomListStudent customListStudent = new CustomListStudent(list);
+        CustomListStudent customListStudent = new CustomListStudent(list, classRoom);
         customListStudent.setOnClickItemListener(new CustomListStudent.OnClickItemListener() {
             @Override
             public void doSomeThing(int position) {
                 student = list.get(position);
             }
         });
-        list_student.setAdapter(customListStudent);
-        list_student.setLayoutManager(new LinearLayoutManager(this));
+        binding.listStudent.setAdapter(customListStudent);
+        binding.listStudent.setLayoutManager(new LinearLayoutManager(this));
 
 
-
-        btn_watch.setOnClickListener(view -> {
+        binding.btnWatch.setOnClickListener(view -> {
             StartStudent();
         });
 
-        btn_back.setOnClickListener(view -> {
+        binding.btnBackStudent.setOnClickListener(view -> {
             BackActivity();
         });
     }
@@ -66,7 +56,6 @@ public class ActivityStudent extends AppCompatActivity {
 
     private void StartStudent() {
         try{
-            Toast.makeText(this, student.getName(), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, ActivityProfileStudent.class);
             startActivity(intent);
             student = null;

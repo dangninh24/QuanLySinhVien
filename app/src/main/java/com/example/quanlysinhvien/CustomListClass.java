@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import datalocal.entity.ClassRoom;
+
 public class CustomListClass extends RecyclerView.Adapter<CustomListClass.Viewholder> {
     public interface MyOnClickItemListener{
         void doSomeThing(int position);
@@ -40,10 +42,9 @@ public class CustomListClass extends RecyclerView.Adapter<CustomListClass.Viewho
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         ClassRoom classRoom =  list.get(position);
 
-        holder.img_teacher.setImageResource(classRoom.getImg());
-        holder.class_id.setText(classRoom.getClass_id());
-        holder.class_name.setText(classRoom.getClass_name());
-        holder.teacher_name.setText(classRoom.getTeacher_name());
+        holder.img_teacher.setImageResource(classRoom.getAnhLop());
+        holder.class_id.setText(classRoom.getMaLop());
+        holder.class_name.setText(classRoom.getTenLop());
         holder.cardView_class.setOnClickListener(view ->{
             myOnClickItemListener.doSomeThing(position);
         });
@@ -63,7 +64,6 @@ public class CustomListClass extends RecyclerView.Adapter<CustomListClass.Viewho
             img_teacher = itemView.findViewById(R.id.img_class_home);
             class_id = itemView.findViewById(R.id.class_id);
             class_name = itemView.findViewById(R.id.class_name);
-            teacher_name = itemView.findViewById(R.id.teacher_name);
             cardView_class = itemView.findViewById(R.id.cardview_class);
         }
     }

@@ -15,4 +15,7 @@ public interface StudentDao {
 
     @Query("SELECT * FROM Student")
     List<Student> getListStudent();
+
+    @Query("SELECT * FROM Student WHERE MaLop = :classId")
+    List<Student> getListStudentByClass(String classId);
 }
