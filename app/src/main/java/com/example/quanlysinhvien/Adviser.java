@@ -16,7 +16,6 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class Adviser extends Fragment {
-    Button btn_answer;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -67,11 +66,7 @@ public class Adviser extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        btn_answer = getView().findViewById(R.id.btn_answer);
 
-        btn_answer.setOnClickListener( view -> {
-            AnswerTheQuestion();
-        });
     }
 
     private void AnswerTheQuestion() {
