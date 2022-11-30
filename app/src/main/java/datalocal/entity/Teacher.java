@@ -18,6 +18,9 @@ public class Teacher implements Serializable {
     @ColumnInfo(name = "TenGiaoVien")
     private String tenGiaoVien;
 
+    @ColumnInfo(name = "AnhGiaoVien")
+    private int anhGiaoVien;
+
     @ColumnInfo(name = "NgaySinh")
     private String ngaySinh;
 
@@ -45,9 +48,10 @@ public class Teacher implements Serializable {
     @ColumnInfo(name = "Email")
     private String email;
 
-    public Teacher(@NonNull String taiKhoan, String tenGiaoVien, String ngaySinh, String gioiTinh, String noiSinh, String CCCD, String tinhTrangHonNhan, String soDienThoai, String trinhDo, String phongBan, String email) {
+    public Teacher(@NonNull String taiKhoan, String tenGiaoVien, int anhGiaoVien, String ngaySinh, String gioiTinh, String noiSinh, String CCCD, String tinhTrangHonNhan, String soDienThoai, String trinhDo, String phongBan, String email) {
         this.taiKhoan = taiKhoan;
         this.tenGiaoVien = tenGiaoVien;
+        this.anhGiaoVien = anhGiaoVien;
         this.ngaySinh = ngaySinh;
         this.gioiTinh = gioiTinh;
         this.noiSinh = noiSinh;
@@ -57,6 +61,14 @@ public class Teacher implements Serializable {
         this.trinhDo = trinhDo;
         this.phongBan = phongBan;
         this.email = email;
+    }
+
+    public int getAnhGiaoVien() {
+        return anhGiaoVien;
+    }
+
+    public void setAnhGiaoVien(int anhGiaoVien) {
+        this.anhGiaoVien = anhGiaoVien;
     }
 
     public String getNgaySinh() {

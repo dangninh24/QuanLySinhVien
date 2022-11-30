@@ -14,6 +14,8 @@ import com.example.quanlysinhvien.databinding.ActivityMainBinding;
 
 import datalocal.dbconnect.DBConnect;
 import datalocal.entity.Account;
+import datalocal.entity.AccountAndTeacher;
+import datalocal.entity.Teacher;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -49,6 +51,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void Login() {
+
+//        Account accs = new Account("GV1", "1");
+//        dbConnect.getAccountDao().insertAccount(accs);
+//        Teacher teacher = new Teacher("GV1",
+//                "Dương Thảo Ngân",
+//                R.drawable.thaongan,
+//                "06/08/2001",
+//                "Nữ",
+//                "Sóc Sơn - Hà Nội",
+//                "123456789",
+//                "Chưa kết hôn",
+//                "1234567890",
+//                "Thạc Sĩ", "Quản Lý Khoa Học", "thaoNgan06082001@gmail.com");
+//        dbConnect.getTeacherDao().insertTeacher(teacher);
+
         try{
             String pass =  binding.etxtPass.getText().toString();
             String acc =  binding.etxtAcc.getText().toString();
@@ -57,9 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
             if(account != null) {
                 Intent intent = new Intent(this, MainPage.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("Account", account);
-                intent.putExtras(bundle);
+                Home home = Home.newInstance(account);
+                Profile profile = Profile.newInstance(account);
                 startActivity(intent);
             } else {
                 Toast.makeText(this, "Tài Khoản Hoặc Mật Khẩu Không Đúng.", Toast.LENGTH_SHORT).show();

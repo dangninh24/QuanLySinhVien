@@ -33,8 +33,7 @@
         <ImageView
             android:id="@+id/img_teacher"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/thaongan" />
+            android:layout_height="100dp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -94,11 +93,12 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_DOB"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginRight="5dp"
-                        android:text="06/08/2001"
+
                         android:textColor="@color/black" />
                 </RelativeLayout>
 
@@ -116,11 +116,12 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_sex"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginRight="5dp"
-                        android:text="Nữ"
+
                         android:textColor="@color/black" />
                 </RelativeLayout>
 
@@ -138,11 +139,11 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_address"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginRight="5dp"
-                        android:text="Sóc Sơn"
                         android:textColor="@color/black" />
                 </RelativeLayout>
 
@@ -160,11 +161,12 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_CCCD"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginRight="5dp"
-                        android:text="Không có"
+
                         android:textColor="@color/black" />
                 </RelativeLayout>
 
@@ -182,11 +184,12 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_married"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginRight="5dp"
-                        android:text="Chưa kết hôn"
+
                         android:textColor="@color/black" />
                 </RelativeLayout>
             </LinearLayout>
@@ -222,11 +225,12 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginRight="5dp"
-                        android:text="duongthaongan@gmail.com"
+
                         android:textColor="@color/black" />
                 </RelativeLayout>
 
@@ -244,75 +248,79 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/txt_phone_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginRight="5dp"
-                        android:text="123456789"
+
                         android:textColor="@color/black" />
                 </RelativeLayout>
             </LinearLayout>
+
             <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/custom_radius_profile"
-            android:orientation="vertical">
-
-            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/custom_top_radius_profile"
-                android:gravity="center"
-                android:text="Thông tin liên quan"
-                android:textColor="@color/white"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp">
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/custom_radius_profile"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:text="Trình độ"
-                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/custom_top_radius_profile"
+                    android:gravity="center"
+                    android:text="Thông tin liên quan"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="5dp"
-                    android:text="Tiến sĩ"
-                    android:textColor="@color/black" />
-            </RelativeLayout>
+                    android:layout_margin="10dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Trình độ"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/txt_education"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="5dp"
+
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:text="Phòng ban"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
+                    android:layout_margin="10dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="5dp"
-                    android:text="Quản lý khoa học"
-                    android:textColor="@color/black" />
-            </RelativeLayout>
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="Phòng ban"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_department"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="5dp"
+
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

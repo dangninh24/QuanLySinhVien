@@ -20,10 +20,22 @@ public class ClassRoom implements Serializable {
     @ColumnInfo(name = "TaiKhoan")
     private String taiKhoan;
 
-    public ClassRoom(@NonNull String maLop, String tenLop, String taiKhoan) {
+    @ColumnInfo(name = "AnhLop")
+    private int anhLop;
+
+    public ClassRoom(@NonNull String maLop, String tenLop, String taiKhoan, int anhLop) {
         this.maLop = maLop;
         this.tenLop = tenLop;
         this.taiKhoan = taiKhoan;
+        this.anhLop = anhLop;
+    }
+
+    public int getAnhLop() {
+        return anhLop;
+    }
+
+    public void setAnhLop(int anhLop) {
+        this.anhLop = anhLop;
     }
 
     @NonNull

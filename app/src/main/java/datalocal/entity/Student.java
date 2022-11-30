@@ -17,13 +17,25 @@ public class Student implements Serializable {
     @ColumnInfo(name = "TenSinhVien")
     private String tenSinhVien;
 
+    @ColumnInfo(name = "AnhSinhVien")
+    private int anhSinhVien;
+
     @ColumnInfo(name = "MaLop")
     private String maLop;
 
-    public Student(@NonNull String maSinhVien, String tenSinhVien, String maLop) {
+    public Student(@NonNull String maSinhVien, String tenSinhVien, int anhSinhVien, String maLop) {
         this.maSinhVien = maSinhVien;
         this.tenSinhVien = tenSinhVien;
+        this.anhSinhVien = anhSinhVien;
         this.maLop = maLop;
+    }
+
+    public int getAnhSinhVien() {
+        return anhSinhVien;
+    }
+
+    public void setAnhSinhVien(int anhSinhVien) {
+        this.anhSinhVien = anhSinhVien;
     }
 
     @NonNull
