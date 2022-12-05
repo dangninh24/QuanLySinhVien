@@ -5,6 +5,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.example.quanlysinhvien.R;
+
 import java.io.Serializable;
 
 @Entity
@@ -44,10 +46,14 @@ public class Student implements Serializable {
     @ColumnInfo(name = "Khoa")
     private String khoa;
 
-    public Student(@NonNull String maSinhVien, String tenSinhVien, int anhSinhVien, String maLop, String ngaySinh, String gioiTinh, String noiSinh, String CCCD, String soDienThoai, String email, String khoa) {
+    public Student(@NonNull String maSinhVien, String tenSinhVien, String maLop, String ngaySinh, String gioiTinh, String noiSinh, String CCCD, String soDienThoai, String email, String khoa) {
         this.maSinhVien = maSinhVien;
         this.tenSinhVien = tenSinhVien;
-        this.anhSinhVien = anhSinhVien;
+        if(tenSinhVien.equals("Nam")) {
+            this.anhSinhVien = R.drawable.boy;
+        } else {
+            this.anhSinhVien = R.drawable.girl;
+        }
         this.maLop = maLop;
         this.ngaySinh = ngaySinh;
         this.gioiTinh = gioiTinh;
